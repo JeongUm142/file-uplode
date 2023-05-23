@@ -9,7 +9,7 @@
 	System.out.println(dir + "<--dir");
 	
 	int max = 10 * 1024 * 1024; 
-	
+
  	MultipartRequest mRequest = new MultipartRequest(request, dir, max, "utf-8", new DefaultFileRenamePolicy());	
 	//System.out.println(mRequest.getOriginalFileName("boardFile") + "<-- boardFile");
  	//mRequest.getOriginalFileName("boardFile") 값이 null이면 board테이블에 title만 수정

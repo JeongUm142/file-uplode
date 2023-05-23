@@ -2,6 +2,12 @@
 <%@ page import="java.util.*" %>
 <%@ page import="java.sql.*" %>
 <%
+	if(request.getParameter("boardNo") == null
+	||request.getParameter("boardFileNo") == null){
+	response.sendRedirect(request.getContextPath()+"/boardList.jsp");
+	return;
+	} 
+
 	int boardNo = Integer.parseInt(request.getParameter("boardNo"));
 	int boardFileNo = Integer.parseInt(request.getParameter("boardFileNo"));
 	
@@ -43,12 +49,13 @@
 		<input type="hidden" name="boardFileNo" value="<%=list.get("boardFileNo")%>">
 		<table>
 			<tr>
+				<td>게시글명</td>
 				<td>
 					<input name="boardTitle" value="<%=list.get("boardTitle")%>" required="required">
 				</td>
 			</tr>
 			<tr>
-				<th>boardFile(수정된 파일 : <%=list.get("originFilename")%></th>
+				<td>파일(현재 파일 : <%=list.get("originFilename")%>)</td>
 				<td>
 					<input type="file" name="boardFile">
 				</td>

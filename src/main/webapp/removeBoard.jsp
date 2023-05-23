@@ -45,7 +45,7 @@
 <title>Board 삭제 폼</title>
 </head>
 <body>
-	<h1>Board 삭제</h1>
+	<h1>Board & boardFile 삭제</h1>
 	<form action="<%=request.getContextPath()%>/removeBoardAction.jsp" method="post" enctype="multipart/form-data">
 		<input type="hidden" name = "boardNo" value="<%=list.get("boardNo")%>">
 		<input type="hidden" name = "boardFileNo" value="<%=list.get("boardFileNo")%>">
